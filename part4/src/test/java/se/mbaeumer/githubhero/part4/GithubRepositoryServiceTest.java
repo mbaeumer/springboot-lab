@@ -1,4 +1,4 @@
-package se.mbaeumer.githubhero.part3;
+package se.mbaeumer.githubhero.part4;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -9,8 +9,8 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.client.MockRestServiceServer;
 import org.springframework.web.client.RestTemplate;
-import se.mbaeumer.githubhero.part3.services.GithubRepositoryService;
-import se.mbaeumer.githubhero.part3.services.Repository;
+import se.mbaeumer.githubhero.part4.services.GithubRepositoryService;
+import se.mbaeumer.githubhero.part4.services.Repository;
 
 import java.util.List;
 
@@ -37,10 +37,6 @@ public class GithubRepositoryServiceTest {
     @Test
     public void testGetRepositories() {
 
-        /*
-        [{"name":"angular-ots-custom-navbar","owner":{"login":"mbaeumer","id":5737140,"avatarUrl":null,"url":"https://api.github.com/users/mbaeumer"},"url":"https://api.github.com/repos/mbaeumer/angular-ots-custom-navbar"},{"name":"angular-ots-notify","owner":{"login":"mbaeumer","id":5737140,"avatarUrl":null,"url":"https://api.github.com/users/mbaeumer"},"url":"https://api.github.com/repos/mbaeumer/angular-ots-notify"},{"name":"codehero-springboot-samples","owner":{"login":"mbaeumer","id":5737140,"avatarUrl":null,"url":"https://api.github.com/users/mbaeumer"},"url":"https://api.github.com/repos/mbaeumer/codehero-springboot-samples"},{"name":"fiftyseven","owner":{"login":"mbaeumer","id":5737140,"avatarUrl":null,"url":"https://api.github.com/users/mbaeumer"},"url":"https://api.github.com/repos/mbaeumer/fiftyseven"},{"name":"fxlink","owner":{"login":"mbaeumer","id":5737140,"avatarUrl":null,"url":"https://api.github.com/users/mbaeumer"},"url":"https://api.github.com/repos/mbaeumer/fxlink"},{"name":"glucosediary","owner":{"login":"mbaeumer","id":5737140,"avatarUrl":null,"url":"https://api.github.com/users/mbaeumer"},"url":"https://api.github.com/repos/mbaeumer/glucosediary"},{"name":"mbaeumer.github.io","owner":{"login":"mbaeumer","id":5737140,"avatarUrl":null,"url":"https://api.github.com/users/mbaeumer"},"url":"https://api.github.com/repos/mbaeumer/mbaeumer.github.io"},{"name":"papp2017","owner":{"login":"mbaeumer","id":5737140,"avatarUrl":null,"url":"https://api.github.com/users/mbaeumer"},"url":"https://api.github.com/repos/mbaeumer/papp2017"},{"name":"python-challenge","owner":{"login":"mbaeumer","id":5737140,"avatarUrl":null,"url":"https://api.github.com/users/mbaeumer"},"url":"https://api.github.com/repos/mbaeumer/python-challenge"},{"name":"springboot-lab","owner":{"login":"mbaeumer","id":5737140,"avatarUrl":null,"url":"https://api.github.com/users/mbaeumer"},"url":"https://api.github.com/repos/mbaeumer/springboot-lab"},{"name":"vtri","owner":{"login":"mbaeumer","id":5737140,"avatarUrl":null,"url":"https://api.github.com/users/mbaeumer"},"url":"https://api.github.com/repos/mbaeumer/vtri"}]
-
-         */
         String expectedResponseBody="[{\"name\":\"angular-ots-custom-navbar\",\"owner\":{\"login\":\"mbaeumer\",\"id\":5737140,\"avatarUrl\":null,\"url\":\"https://api.github.com/users/mbaeumer\"},\"url\":\"https://api.github.com/repos/mbaeumer/angular-ots-custom-navbar\"},{\"name\":\"angular-ots-notify\",\"owner\":{\"login\":\"mbaeumer\",\"id\":5737140,\"avatarUrl\":null,\"url\":\"https://api.github.com/users/mbaeumer\"},\"url\":\"https://api.github.com/repos/mbaeumer/angular-ots-notify\"},{\"name\":\"codehero-springboot-samples\",\"owner\":{\"login\":\"mbaeumer\",\"id\":5737140,\"avatarUrl\":null,\"url\":\"https://api.github.com/users/mbaeumer\"},\"url\":\"https://api.github.com/repos/mbaeumer/codehero-springboot-samples\"},{\"name\":\"fiftyseven\",\"owner\":{\"login\":\"mbaeumer\",\"id\":5737140,\"avatarUrl\":null,\"url\":\"https://api.github.com/users/mbaeumer\"},\"url\":\"https://api.github.com/repos/mbaeumer/fiftyseven\"},{\"name\":\"fxlink\",\"owner\":{\"login\":\"mbaeumer\",\"id\":5737140,\"avatarUrl\":null,\"url\":\"https://api.github.com/users/mbaeumer\"},\"url\":\"https://api.github.com/repos/mbaeumer/fxlink\"},{\"name\":\"glucosediary\",\"owner\":{\"login\":\"mbaeumer\",\"id\":5737140,\"avatarUrl\":null,\"url\":\"https://api.github.com/users/mbaeumer\"},\"url\":\"https://api.github.com/repos/mbaeumer/glucosediary\"},{\"name\":\"mbaeumer.github.io\",\"owner\":{\"login\":\"mbaeumer\",\"id\":5737140,\"avatarUrl\":null,\"url\":\"https://api.github.com/users/mbaeumer\"},\"url\":\"https://api.github.com/repos/mbaeumer/mbaeumer.github.io\"},{\"name\":\"papp2017\",\"owner\":{\"login\":\"mbaeumer\",\"id\":5737140,\"avatarUrl\":null,\"url\":\"https://api.github.com/users/mbaeumer\"},\"url\":\"https://api.github.com/repos/mbaeumer/papp2017\"},{\"name\":\"python-challenge\",\"owner\":{\"login\":\"mbaeumer\",\"id\":5737140,\"avatarUrl\":null,\"url\":\"https://api.github.com/users/mbaeumer\"},\"url\":\"https://api.github.com/repos/mbaeumer/python-challenge\"},{\"name\":\"springboot-lab\",\"owner\":{\"login\":\"mbaeumer\",\"id\":5737140,\"avatarUrl\":null,\"url\":\"https://api.github.com/users/mbaeumer\"},\"url\":\"https://api.github.com/repos/mbaeumer/springboot-lab\"},{\"name\":\"vtri\",\"owner\":{\"login\":\"mbaeumer\",\"id\":5737140,\"avatarUrl\":null,\"url\":\"https://api.github.com/users/mbaeumer\"},\"url\":\"https://api.github.com/repos/mbaeumer/vtri\"}]";
 
         mockServer.expect(requestTo("https://api.github.com/users/mbaeumer/repos")).andRespond(withSuccess(expectedResponseBody, MediaType.APPLICATION_JSON));
@@ -51,6 +47,4 @@ public class GithubRepositoryServiceTest {
         mockServer.verify();
         assertEquals(11, result.size());
     }
-
-
 }

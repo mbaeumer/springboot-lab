@@ -1,4 +1,4 @@
-package se.mbaeumer.githubhero.part3.services;
+package se.mbaeumer.githubhero.part4.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

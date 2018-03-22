@@ -1,4 +1,4 @@
-package se.mbaeumer.githubhero.part3.controllers;
+package se.mbaeumer.githubhero.part4.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

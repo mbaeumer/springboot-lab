@@ -1,12 +1,12 @@
-package se.mbaeumer.githubhero.part3.controllers;
+package se.mbaeumer.githubhero.part4.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import se.mbaeumer.githubhero.part3.services.GithubRepositoryService;
-import se.mbaeumer.githubhero.part3.services.Repository;
+import se.mbaeumer.githubhero.part4.services.GithubRepositoryService;
+import se.mbaeumer.githubhero.part4.services.Repository;
 
 import java.util.List;
 

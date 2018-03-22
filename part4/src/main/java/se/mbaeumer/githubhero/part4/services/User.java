@@ -1,4 +1,4 @@
-package se.mbaeumer.githubhero.part3.services;
+package se.mbaeumer.githubhero.part4.services;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

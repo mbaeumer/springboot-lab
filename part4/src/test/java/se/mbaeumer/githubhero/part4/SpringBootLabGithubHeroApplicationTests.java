@@ -1,4 +1,4 @@
-package se.mbaeumer.githubhero.part3;
+package se.mbaeumer.githubhero.part4;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
