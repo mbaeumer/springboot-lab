@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<h1>List of repositories owned by <span th:utext="${user}"></span></h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>URL</th>
+        <th>Owner</th>
+    </tr>
+    <tr th:each="repo : ${repos}">
+        <td th:text="${repo.name}"></td>
+        <td th:text="${repo.url}"></td>
+        <td th:text="${repo.owner.login}"></td>
+    </tr>
+</table>
+<body>
+
+</body>
+</html>
